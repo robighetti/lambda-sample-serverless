@@ -1,0 +1,21 @@
+service: commercial-performance-report-cubo-get-all-requests
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+
+functions:
+  hello-world:
+    handler: index.handler
+    events:
+      - http: GET /hello-world
+      - http: POST /hello-world
+
+plugins:
+- serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 5001
+
